@@ -25,19 +25,33 @@ function check_operator(a)
 
 b.addEventListener("click",function()
 {  
-   
-   
-
-
 
    var write=document.getElementsByClassName('steps')[0]
    w=document.querySelector("input").value
    inp="("+w+')'
 
+   var count1=0
+   var count2=0
+
+   for(p=0;p<w.length;p++){
+      if(w[p]=='('){
+         count1++
+      }
+      if(w[p]==')'){
+         count2++
+      }
+
+   }
+
+   if(count1!=count2){
+      alert("In")
+      window.location.reload()
+   }
+   else{
+
+   
    if (i==0)
    {
-      
-      
       
       for(var inc=0;inc<inp.length;inc++)
       {
@@ -273,5 +287,6 @@ b.addEventListener("click",function()
 
    document.querySelectorAll('input')[1].value=postfix
    i++;
+}
 })
 
